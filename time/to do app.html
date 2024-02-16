@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add & Remove items</h1>
+    <input type="text" placeholder="Enter item" id="getItem">
+    <button onclick="addData()">SUBMIT</button><br>
+    
+    <div>
+        <ol id="store">
+        </ol>
+    </div>
+    <script>
+        function addData(){
+            let GetItem = document.getElementById("getItem").value.trim();
+            let Store_item = document.getElementById("store");
+            
+            if(GetItem === ""){
+                alert("Invalid item you've entered! Please enter a correct item");
+                return;
+            }
+            
+            let li = document.createElement("li");
+            li.innerHTML = GetItem;
+            let btn = document.createElement("button");
+            btn.innerHTML = '<img src="image/cross.png" alt="" style="height:20px; width:20px;">';
+
+            btn.onclick = function(){
+                Store_item.removeChild(li);
+            }   
+
+            li.appendChild(btn);
+            Store_item.appendChild(li);
+            
+            document.getElementById("getItem").value = "";
+        }
+    </script>
+</body>
+</html>

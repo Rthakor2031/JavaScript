@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(44, 13, 86);
+            text-align: center;
+            font-family: futura;
+            text-transform:uppercase;
+            padding-top:150px;
+        }
+        h1{
+            display:inline;
+            color:white;
+            border-bottom:1px solid white;
+            text-shadow: 3px 3px 5px rgb(0, 0, 0);
+        }
+        span{
+            color: rgb(45, 201, 100);
+            text-shadow: 3px 3px 5px rgb(0, 0, 0);
+        }
+        strong{
+            color:yellowgreen;
+            text-shadow: 3px 3px 2px rgb(0, 0, 0);
+            font-size:35px;
+        }
+    </style>
+</head>
+<body>
+    <strong>Display Current Time</strong><br>
+    <h1>hours :<span id="hrs"></span> |</h1>&nbsp;&nbsp;
+    <h1>Minutes :<span id="min"></span> |</h1>&nbsp;&nbsp;
+    <h1>Seconds :<span id="sec"></span> |</h1>
+    <script>
+        function Timer(){
+            let date = new Date();
+            let hrs = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            document.querySelector("#hrs").innerHTML = hrs;
+            document.querySelector("#min").innerHTML = min;
+            document.querySelector("#sec").innerHTML = sec;
+        }
+        setInterval(Timer,1000)
+    </script>
+</body>
+</html>
