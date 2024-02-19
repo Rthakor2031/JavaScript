@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="box">
+        <div class="display">
+            <input type="text" placeholder="." id="Show">
+        </div>
+        <h4>CASIO-FX</h4>
+        <table>
+            <tr>
+                <td><button onclick="clearAll()" style="background-color: rgb(255, 64, 0);">Delete</button></td>
+                <td><button onclick="clearLast()" style="background-color: orange;"><i class="fa fa-arrow-circle-o-left" id="icon"></i></button></td>
+                <td><button onclick="modu()" style="background-color: orange;">%</button></td>
+                <td><button onclick="ToDisplay('.')" style="background-color: orange;">.</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ToDisplay('7')">7</button></td>
+                <td><button onclick="ToDisplay('8')">8</button></td>
+                <td><button onclick="ToDisplay('9')">9</button></td>
+                <td><button onclick="ToDisplay('+')" style="background-color: orange;">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ToDisplay('4')">4</button></td>
+                <td><button onclick="ToDisplay('5')">5</button></td>
+                <td><button onclick="ToDisplay('6')">6</button></td>
+                <td><button onclick="ToDisplay('-')" style="background-color: orange;">_</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ToDisplay('1')">1</button></td>
+                <td><button onclick="ToDisplay('2')">2</button></td>
+                <td><button onclick="ToDisplay('3')">3</button></td>
+                <td><button onclick="ToDisplay('*')" style="background-color: orange;">x</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="ToDisplay('0')">0</button></td>
+                <td><button onclick="ToDisplay('00')">00</button></td>
+                <td><button></button></td>
+                <td><button onclick="Result()" style="background-color: orange;"> = </button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="calc.js"></script>
+</body>
+</html>
