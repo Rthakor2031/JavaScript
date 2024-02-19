@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        #img-box{
+            display: flex;
+            width:900px;
+            height: 350px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            padding:20px;
+        }
+        #img-box div{
+            display: grid;
+            height: 350px;
+            grid-template-columns:auto auto auto;
+            gap:15px;
+        }
+        #img-box div img{
+            display: grid;
+            height: 350px;
+            width:600px;
+            grid-template-columns:auto auto auto;
+            gap:15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <img src="https://e7.pngegg.com/pngimages/704/580/png-clipart-arrow-button-computer-icons-next-button-blue-trademark-thumbnail.png" alt="" height="50px" width="50px" id="previous_btn">  
+        <div id="img-box">
+            <div>
+                <span><img src="https://dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com/images/K3l1FVQLqIoUZSEs3PGOWbifaReuSNhmhsSvNdFa.jpg" alt=""></span>
+                <span><img src="https://i.ytimg.com/vi/V8_PARuypqo/sddefault.jpg" alt=""></span>
+                <span><img src="https://www.carlelo.com/laravel/public/uploads/model/1650116462.webp" alt=""></span>
+            </div>
+            <div>
+                <span><img src="https://i.ytimg.com/vi/BZtmhyldQio/maxresdefault.jpg" alt=""></span>
+                <span><img src="https://i.ytimg.com/vi/TFT2gzJqdmQ/maxresdefault.jpg" alt=""></span>
+                <span><img src="https://www.otempo.com.br/image/contentid/policy:1.3249311:1696626197/land-rover-discovery-p300-r-dynamic-hse-85-jpeg.jpeg?f=3x2&w=1224" alt=""></span>
+            </div>
+        </div>
+        <img src="https://w7.pngwing.com/pngs/651/825/png-transparent-round-blue-arrow-logo-button-arrow-next-button-blue-trademark-internet-thumbnail.png" alt="" height="50px" width="50px" id="forward_btn">
+    </div>
+
+    <script>
+        let set_img = document.querySelector("#img-box");
+        let leftbtn = document.getElementById("previous_btn");
+        let rightbtn = document.getElementById("forward_btn");
+
+        set_img.addEventListener("wheel",(xyz)=>{xyz.preventDefault()
+            set_img.scrollLeft += xyz.deltaY;
+        })
+
+        leftbtn.addEventListener("click",()=>{
+            set_img.style.scrollBehaviour = "smooth";
+            set_img.scrollLeft -=900;
+        })
+        rightbtn.addEventListener("click",()=>{
+            set_img.style.scrollBehaviour = "smooth";
+            set_img.scrollLeft +=900;
+        })
+    </script>
+</body>
+</html>
