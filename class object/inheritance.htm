@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class one
+        {
+            constructor()  // constructor method
+            {
+                console.log("one")
+            } 
+            first()  // normal function method
+            {
+                console.log("First called")
+            }   
+        }
+        class second extends one{ 
+            constructor(sal)
+            {
+                super();
+                this.salary = sal;    
+            }
+            first(){
+                console.log("second called");
+                super.first();
+            }
+        }
+        let objsec = new second(10)
+        console.log(objsec.first());
+    </script>
+</body>
+</html>

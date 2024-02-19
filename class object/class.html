@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class xyz{  // it's a constructor method
+            constructor(a)
+            {
+                this.a = a;
+            //    console.log("hello");
+            }
+            say(){  
+                console.log("hey....")
+            }
+            static msg(){  // when you want to print static fuction or variable at a time we can use class name.
+                console.log("sec msg called");
+            }
+           static name = "Rahul"
+        }
+        let obj = new xyz("Kia");
+        // console.log(xyz.msg())
+        console.log(xyz.name);
+    </script>
+</body>
+</html>
