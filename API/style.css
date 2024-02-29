@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(0, 0, 0);
+}
+.box{
+    
+    margin: 8% auto;
+    width:40%;
+    height:auto;
+}
+.inline{
+    display:flex;
+    justify-content:center;
+} 
