@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="container">
+            <h1>Enter OTP For Transaction</h1>
+        <div>
+            <form action="/verify_otp">
+                <label for=""><h3>Enter your Mobile No &nbsp;<i class="fa-solid fa-mobile-screen-button"></i></h3></label><br><br>
+                <input type="tel" placeholder="Enter Mobile no" id="Mob"><br><br>
+                <input type="text" placeholder="OTP" name="otp" id="otpget"><br><br>
+            </form>
+        </div>
+            <button onclick="generateOTP()">Generate OTP</button>
+        </div>
+    <script>
+        function GenOtp(length) {
+            let otp = "";
+            for (let i = 0; i < length; i++) {
+                otp += Math.floor(Math.random() * 10).toString()
+            }
+            return otp;
+        }
+
+        function generateOTP() {
+            let get_num = document.getElementById("Mob").value;
+            let otpInput = document.querySelector('#otpget');
+           
+            if(get_num == ""){
+                alert('Mobile Number is Must be Required.')
+                document.getElementById("Mob").style.borderColor = 'red';
+            }
+            else{
+                document.getElementById("Mob").style.borderColor = '';
+                otpInput.value = GenOtp(6);
+                confirm('OTP Generated Successfully: ' + otpInput.value);
+            }
+        }
+    </script>
+</body>
+</html>
