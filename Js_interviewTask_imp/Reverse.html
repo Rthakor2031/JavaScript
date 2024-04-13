@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{background-color: rgb(13, 167, 59); color:white; font-weight: 300;}
+
+    </style>
+</head>
+<body>  
+    <h3>Enter the String value: <input type="text" placeholder="Enter the String"/ > <button>Click and check Console</button> </h3>
+    <h4></h4>
+    
+    <script>
+        //split() method is use for entered string every Single characters provide a seprately in array. like this => Hello then after H,e,l,l,o.
+        //reverse() method is use for making a string into reverse like this => Hello then after olleH.
+        //join() use for each an every single alpha to merge/join.
+
+        let btn = document.querySelector('button')
+        let output = document.querySelector('h4');
+        output.style.color = "green"
+        
+        btn.addEventListener("click" , ()=>{
+            function reverseStr(Str){
+            return Str.split('').reverse('').join('');
+            }
+
+            let OriginString = document.querySelector("input").value; //making a varible for get a string value/enter a string value.
+            let ReverseString = reverseStr(OriginString);//function called here and their value assigned into new variable.
+            console.log(ReverseString);
+            
+            
+            output.textContent = "Reversed String: " + ReverseString;
+        document.querySelector("input").value = "";
+
+        })
+       
+    </script>
+</body>
+</html>
